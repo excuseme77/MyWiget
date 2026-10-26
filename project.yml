@@ -1,4 +1,3 @@
-# Описание проекта для XcodeGen: из него на сервере GitHub генерируется Rock.xcodeproj
 name: Rock
 options:
   bundleIdPrefix: com.rockpet
@@ -21,9 +20,10 @@ targets:
   Rock:
     type: application
     platform: iOS
-    sources: [App]
+    sources:
+      - RockApp.swift
     info:
-      path: App/Info.plist
+      path: AppInfo.plist
       properties:
         CFBundleDisplayName: Камень
         UILaunchScreen: {}
@@ -37,9 +37,11 @@ targets:
   RockWidgetExtension:
     type: app-extension
     platform: iOS
-    sources: [Widget]
+    sources:
+      - RockWidget.swift
+      - RockWidgetBundle.swift
     info:
-      path: Widget/Info.plist
+      path: WidgetInfo.plist
       properties:
         CFBundleDisplayName: Камень
         NSExtension:
